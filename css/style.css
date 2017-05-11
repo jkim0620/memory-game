@@ -1,11 +1,17 @@
+
+
+/*# sourceMappingURL=style.css.map */
+
+
 body {
   /*font-family: */
   box-sizing: border-box;
   /*background: #2a2a30;*/
   background: #3a3a4f;
+  font-family: "Baloo", cursive;
 }
 
-.modal-wrapper, .modal-wrapper-2 {
+.modal-intro-wrapper, .modal-instruction-wrapper, .modal-popup-wrapper {
 	position: fixed;
 	top: 0;
 	left: 0;
@@ -16,12 +22,12 @@ body {
 	padding-top: 100px;
 }
 
-.modal-wrapper {
-  background-color: #2aa1fc;
-  display: none;
+.modal-intro-wrapper {
+  background-color: #3a3a4f;
+  text-align: center;
 }
 
-.modal-content, .modal-content-2 {
+.modal-instruction-content, .modal-popup-content {
 	margin: auto;
 	width: 70%;
   height: 400px;
@@ -30,40 +36,55 @@ body {
   border: none;
 }
 
-.modal-content {
-  background-color: white;
-  text-align: center;
+.modal-intro-wrapper h1 {
+  font-size: 50px;
+  color: white;
 }
 
-#waldo {
-  width: 50%;
-  height: auto;
-}
-
-#startBtn {
-  width: 100px;
+#startBtn, #endBtn {
+  width: 200px;
   margin: 0 auto;
   border: none;
   padding: 15px;
   border-radius: 5px;
-  background-color: red;
-  color: white;
-  font-size: 1.2em;
+  font-size: 30px;
   font-weight: bold;
   cursor: pointer;
+  display: block;
+  margin-top: 10px;
+  font-family: "Baloo", cursive;
+}
+
+#startBtn {
+  background-color: #f44242;
+  color: white;
+}
+
+#endBtn {
+  background-color: white;
+  color: #3a3a4f;
 }
 
 /*.modal-on {
 	overflow: hidden;
 }*/
 
-.modal-wrapper-2 {
-  background-color: rgba(0, 0, 0, 0.8);
+.modal-instruction-wrapper {
+  background-color: rgba(0, 0, 0, 0.5);
   display: none;
 }
 
-.modal-content-2 {
-  background-color: rgba(252, 252, 252, 0.8);
+.modal-instruction-content {
+  background-color: rgba(252, 252, 252, 0.5);
+}
+
+.modal-popup-wrapper {
+  display: none;
+}
+
+.modal-popup-content {
+  text-align: center;
+  background-color: white;
 }
 
 #exit {
