@@ -33,6 +33,7 @@ $(document).ready(function() {
   console.log($startBtn);
 
   let findMe;
+  let clickedCard;
 
   let $card = $(".card");
   let cardArr = [];
@@ -59,23 +60,16 @@ $(document).ready(function() {
 
   console.log(cardArr);
 
+  for (let i = 0; i < cardArr.length; i++) {
+    // if (cardArr[i])
+    console.log(cardArr[i]);
+  }
+
   let pickRandomCard = function(arr) {
     let i = Math.floor(Math.random() * arr.length);
     return arr[i];
     // return array[i];
   }
-
-  // Testing shuffleCards function on click
-  // $("#tempBtn").on("click", function() {
-  //   console.log("clicked");
-  //   $(".card").remove();
-  //   shuffleCards(cardArr);
-  //   console.log(cardArr);
-  //   console.log(cardArr[0]);
-  //   for(let i = 0; i < cardArr.length; i++) {
-  //     $(".container").append(cardArr[i]);
-  //   }
-  // });
 
   $startBtn.on("click", function() {
     console.log('click');
@@ -86,6 +80,9 @@ $(document).ready(function() {
   findMe = pickRandomCard(cardArr);
 
   let $thisIsMe = $(findMe) ;
+  let $thisIsMeIndex;
+
+  let currentIndexNum;
 
   console.log($thisIsMe);
 
@@ -108,7 +105,11 @@ $(document).ready(function() {
     console.log(cardArr[0]);
     for(let i = 0; i < cardArr.length; i++) {
       $(".container").append(cardArr[i]);
+      if (cardArr[i] === $thisIsMe[0]) {
+        $thisIsMeIndex = i;
+      }
     }
+    console.log($thisIsMeIndex);
     window.setTimeout(function() {
       $(".front").css({
         "display": "none"
@@ -132,11 +133,12 @@ $(document).ready(function() {
     console.log($thisIsMe[0]);
 
     $card.on("click", function() {
-      console.log($(this));
+      console.log($(this)[0]);
       // let $that = $(this)[0];
       console.log($(this).children());
       // $(this).eq(index#);
-
+      clickedCard = $(this)[0];
+      console.log(clickedCard);
       if ($(this)[0] === $thisIsMe[0]) {
         $($(this).children().eq(0)).css({
           "display": "none"
@@ -146,27 +148,37 @@ $(document).ready(function() {
         });
         alert("You found me!");
       } else {
-        alert("wrong answer");
-        // window.setTimeout(function() {
-        //   $($(this).children().eq(0)).css({
-        //     "display": "none"
-        //   });
-        //   $($(this).children().eq(1)).css({
-        //     "display": "block"
-        //   });
-        // }, 1000);
-        // window.setTimeout(function() {
-        //   $($(this).children().eq(1)).css({
-        //     "display": "none"
-        //   });
-        //   $($(this).children().eq(0)).css({
-        //     "display": "block"
-        //   });
-        // }, 3000)
-      }
-    });
+        // var num = index number of thisIsMe - clickedCard
+        // if num < 0 num =- num;
 
-  });
+        // if num <= 2 alet("hot")
+        // else if num <= 4 alert(cold)
+
+        for (let i = 0; i < cardArr.length; i++) {
+          if (cardArr[i] === $(this)[0]) {
+            currentIndexNum = i;
+          }
+        }
+
+        let calculate = $thisIsMeIndex - currentIndexNum;
+
+        if (calculate < 0) {
+          calculate =- calculate;
+        } else {
+          return calculate;
+        }
+
+        if (calculate <= 2) {
+          alert("hot");
+        } else if (calculate <= 6) {
+          alert("cold");
+        }
+
+      }
+
+    }); // End of current card click function
+
+  }); // End of goBtn click function
 
 
 
