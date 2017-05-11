@@ -85,9 +85,9 @@ $(document).ready(function() {
 
   findMe = pickRandomCard(cardArr);
 
-  let $thisIsMe = $(findMe);
+  let $thisIsMe = $(findMe) ;
 
-  console.log(findMe);
+  console.log($thisIsMe);
 
   let showMe = findMe;
 
@@ -129,14 +129,40 @@ $(document).ready(function() {
     // $thisIsMe.on("click", function() {
     //   alert("You found me!");
     // });
-    // console.log($thisIsMe[0]);
+    console.log($thisIsMe[0]);
 
     $card.on("click", function() {
-      // console.log($(this)[0]);
+      console.log($(this));
+      // let $that = $(this)[0];
+      console.log($(this).children());
+      // $(this).eq(index#);
+
       if ($(this)[0] === $thisIsMe[0]) {
+        $($(this).children().eq(0)).css({
+          "display": "none"
+        });
+        $($(this).children().eq(1)).css({
+          "display": "block"
+        });
         alert("You found me!");
       } else {
-        console.log("wrong answer");
+        alert("wrong answer");
+        // window.setTimeout(function() {
+        //   $($(this).children().eq(0)).css({
+        //     "display": "none"
+        //   });
+        //   $($(this).children().eq(1)).css({
+        //     "display": "block"
+        //   });
+        // }, 1000);
+        // window.setTimeout(function() {
+        //   $($(this).children().eq(1)).css({
+        //     "display": "none"
+        //   });
+        //   $($(this).children().eq(0)).css({
+        //     "display": "block"
+        //   });
+        // }, 3000)
       }
     });
 
