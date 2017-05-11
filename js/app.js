@@ -26,9 +26,13 @@ $(document).ready(function() {
   // variables
   let $startBtn = $("#startBtn");
   let $endBtn = $("#endBtn");
-  let $okBtn = $("#okBtn");
+  let $continueBtn = $("#continueBtn");
   let $goBtn = $("#goBtn");
   let $exit = $("#exit");
+
+  console.log($startBtn);
+
+  let findMe;
 
   let $card = $(".card");
   let cardArr = [];
@@ -79,17 +83,24 @@ $(document).ready(function() {
     $(".modal-instruction-wrapper").fadeIn(500);
   });
 
-  $okBtn.on("click", function() {
+  findMe = pickRandomCard(cardArr);
+
+  let $thisIsMe = $(findMe);
+
+  console.log(findMe);
+
+  let showMe = findMe;
+
+  $continueBtn.on("click", function() {
     console.log('click');
     $(".modal-instruction-wrapper").fadeOut(500);
     $(".modal-popup-wrapper").fadeIn(500);
-    let findMe = pickRandomCard(cardArr);
-    $(".card-box").append(findMe);
+
+    $(".card-box").append(showMe);
     console.log(pickRandomCard(cardArr));
   });
 
   $goBtn.on("click", function() {
-    console.log('click');
     $(".modal-popup-wrapper").fadeOut(500);
     $(".card").remove();
     shuffleCards(cardArr);
@@ -98,11 +109,48 @@ $(document).ready(function() {
     for(let i = 0; i < cardArr.length; i++) {
       $(".container").append(cardArr[i]);
     }
+    window.setTimeout(function() {
+      $(".front").css({
+        "display": "none"
+      });
+      $(".back").css({
+        "display": "block"
+      });
+    }, 1000);
+    window.setTimeout(function() {
+      $(".back").css({
+        "display": "none"
+      });
+      $(".front").css({
+        "display": "block"
+      });
+    }, 2500);
+
+    // $thisIsMe.on("click", function() {
+    //   alert("You found me!");
+    // });
+    // console.log($thisIsMe[0]);
+
+    $card.on("click", function() {
+      // console.log($(this)[0]);
+      if ($(this)[0] === $thisIsMe[0]) {
+        alert("You found me!");
+      } else {
+        console.log("wrong answer");
+      }
+    });
+
   });
+
+
+
 
   $exit.on("click", function() {
     $(".modal-wrapper-2").fadeOut(500);
   });
+
+  let $test = $("#test");
+
 
 
 
