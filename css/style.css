@@ -29,14 +29,16 @@ body {
 
 .modal-instruction-content, .modal-popup-content {
 	margin: auto;
-	width: 70%;
+	width: 60%;
+  max-width: 700px;
   height: 400px;
-	padding: 30px;
+	padding: 50px 70px;
 	border-radius: 10px;
   border: none;
 }
 
 .modal-intro-wrapper h1 {
+  margin-top: 100px;
   font-size: 50px;
   color: white;
 }
@@ -76,6 +78,16 @@ body {
 
 .modal-instruction-content {
   background-color: rgba(252, 252, 252, 0.5);
+  text-align: center;
+}
+
+.modal-instruction-content h3 {
+  font-size: 30px;
+}
+
+.modal-instruction-content p {
+  text-align: left;
+  font-size: 20px;
 }
 
 .modal-popup-wrapper {
@@ -85,6 +97,14 @@ body {
 .modal-popup-content {
   text-align: center;
   background-color: white;
+}
+
+.card-wrapper {
+  width: 100%;
+}
+
+.card-box {
+  margin: 0 auto;
 }
 
 #exit {
@@ -115,23 +135,41 @@ body {
 
 .card {
   margin: 7px;
-
 }
 
-.front, .back, .front-2, .back-2, .front-3, .back-3, .front-4, .back-4, .front-5, .back-5, .front-6, .back-6, .front-7, .back-7, .front-8, .back-8 {
+/*.front-1, .back-1, .front-2, .back-2, .front-3, .back-3, .front-4, .back-4, .front-5, .back-5, .front-6, .back-6, .front-7, .back-7, .front-8, .back-8 {
   border-radius: 5px;
   height: 80px;
   width: 80px;
   padding: 20px;
   flex: 1;
   flex-basis: 30%;
+}*/
 
+.front, .back {
+  border-radius: 5px;
+  height: 80px;
+  width: 80px;
+  padding: 20px;
+  flex: 1;
+  flex-basis: 30%;
 }
 
-.front, .front-2, .front-3, .front-4, .front-5, .front-6, .front-7, .front-8 {
+/*.front-1, .front-2, .front-3, .front-4, .front-5, .front-6, .front-7, .front-8 {
   background: white;
+  border: 1px #000 solid;
+}*/
+
+.front {
+  background: white;
+  border: 1px #000 solid;
 }
 
-.back, .back-2, .back-3, .back-4, .back-5, .back-6, .back-7, .back-8 {
+/*.back-1, .back-2, .back-3, .back-4, .back-5, .back-6, .back-7, .back-8 {
   background: orange;
+}*/
+
+.back {
+  background-color: #f44242;
+  display: none;
 }
