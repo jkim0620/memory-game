@@ -55,7 +55,7 @@ header {
   font-size: 20px;
 }
 
-.test-wrapper, .modal-intro-wrapper, .modal-instruction-wrapper, .modal-instruction-wrapper-copy, .modal-popup-wrapper {
+.game-wrapper, .modal-intro-wrapper, .modal-instruction-wrapper, .modal-instruction-wrapper-copy, .modal-popup-wrapper, .modal-replay-wrapper {
 	position: fixed;
 	top: 0;
 	left: 0;
@@ -64,9 +64,10 @@ header {
 	/*margin: 0;*/
 	z-index: 1;
 	padding-top: 100px;
+  overflow: hidden;
 }
 
-.test-wrapper {
+.game-wrapper {
   z-index: -10;
   padding: 0;
 }
@@ -104,7 +105,30 @@ header {
   text-shadow: 1px 1px 3px #3a3a4f;
 }
 
-#startBtn, #endBtn, #continueBtn, #goBtn, #goBackBtn {
+.modal-instruction-wrapper, .modal-instruction-wrapper-copy, .modal-popup-wrapper, .modal-replay-wrapper {
+  background-color: rgba(162, 249, 232, 0.8);
+  display: none;
+}
+
+.modal-instruction-content, .modal-instruction-content-copy, .modal-popup-content, .modal-replay-content {
+  background-color: rgba(252, 252, 252, 0.7);
+  text-align: center;
+}
+
+.modal-instruction-content h3, .modal-instruction-content-copy h3 {
+  font-size: 30px;
+}
+
+.modal-instruction-content p, .modal-instruction-content-copy p, .modal-replay-content p  {
+  text-align: left;
+  font-size: 20px;
+}
+
+#modal-end {
+  display: none;
+}
+
+#startBtn, #endBtn, #continueBtn, #goBtn, #goBackBtn, #replayBtn, #endGameBtn {
   width: 200px;
   margin: 0 auto;
   border: none;
@@ -147,25 +171,6 @@ header {
 	overflow: hidden;
 }*/
 
-.modal-instruction-wrapper, .modal-instruction-wrapper-copy, .modal-popup-wrapper {
-  background-color: rgba(162, 249, 232, 0.8);
-  display: none;
-}
-
-.modal-instruction-content, .modal-instruction-content-copy, .modal-popup-content {
-  background-color: rgba(252, 252, 252, 0.7);
-  text-align: center;
-}
-
-.modal-instruction-content h3, .modal-instruction-content-copy h3 {
-  font-size: 30px;
-}
-
-.modal-instruction-content p, .modal-instruction-content-copy p  {
-  text-align: left;
-  font-size: 20px;
-}
-
 .card-wrapper {
   width: 100%;
 }
@@ -203,8 +208,8 @@ header {
   width: 100%;
   max-width: 960px;
   margin: 0 auto;
-  padding: 50px;
-  padding-top: 50px;
+  padding: 10px 50px;
+  /*padding-top: 50px;*/
   display: flex;
   flex-wrap: wrap;
 }
@@ -215,8 +220,8 @@ header {
 
 .front, .back {
   border-radius: 15px;
-  height: 80px;
-  width: 80px;
+  height: 75px;
+  width: 75px;
   padding: 20px;
   flex: 1;
   margin-top: 10px;
@@ -230,4 +235,37 @@ header {
 .back {
   background-color: #f44242;
   display: none;
+}
+
+@media (max-width: 870px) {
+  .container {
+    padding-top: 50px;
+  }
+
+  .front, .back {
+    height: 55px;
+    width: 55px;
+  }
+}
+
+@media (max-width: 740px) {
+  /*.container {
+    padding-top: 50px;
+  }*/
+
+  .front, .back {
+    height: 30px;
+    width: 30px;
+  }
+}
+
+@media (max-width: 580px) {
+  .container {
+    padding: 20px;
+  }
+
+  .front, .back {
+    height: 25px;
+    width: 25px;
+  }
 }
