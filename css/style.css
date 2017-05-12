@@ -35,6 +35,7 @@ header {
   box-sizing: border-box;
   margin-left: 20px;
   margin-top: 10px;
+  cursor: pointer;
 }
 
 #exitBtn {
@@ -48,7 +49,7 @@ header {
   font-size: 20px;
 }
 
-.test-wrapper, .modal-intro-wrapper, .modal-instruction-wrapper, .modal-popup-wrapper {
+.test-wrapper, .modal-intro-wrapper, .modal-instruction-wrapper, .modal-instruction-wrapper-copy, .modal-popup-wrapper {
 	position: fixed;
 	top: 0;
 	left: 0;
@@ -80,7 +81,7 @@ header {
   /*margin-top: 100px;*/
 }
 
-.modal-instruction-content {
+.modal-instruction-content, .modal-instruction-content-copy {
 	margin: auto;
 	width: 60%;
   max-width: 700px;
@@ -97,7 +98,7 @@ header {
   text-shadow: 1px 1px 3px #3a3a4f;
 }
 
-#startBtn, #endBtn, #continueBtn, #goBtn {
+#startBtn, #endBtn, #continueBtn, #goBtn, #goBackBtn {
   width: 200px;
   margin: 0 auto;
   border: none;
@@ -129,7 +130,7 @@ header {
   font-size: 18px;
 }
 
-#goBtn {
+#goBtn, #goBackBtn {
   background-color: #f44242;
   color: white;
   font-size: 18px;
@@ -140,21 +141,21 @@ header {
 	overflow: hidden;
 }*/
 
-.modal-instruction-wrapper, .modal-popup-wrapper {
+.modal-instruction-wrapper, .modal-instruction-wrapper-copy, .modal-popup-wrapper {
   background-color: rgba(162, 249, 232, 0.8);
   display: none;
 }
 
-.modal-instruction-content, .modal-popup-content {
+.modal-instruction-content, .modal-instruction-content-copy, .modal-popup-content {
   background-color: rgba(252, 252, 252, 0.7);
   text-align: center;
 }
 
-.modal-instruction-content h3 {
+.modal-instruction-content h3, .modal-instruction-content-copy h3 {
   font-size: 30px;
 }
 
-.modal-instruction-content p {
+.modal-instruction-content p, .modal-instruction-content-copy p  {
   text-align: left;
   font-size: 20px;
 }
