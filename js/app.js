@@ -71,25 +71,19 @@ $(document).ready(function() {
     return array;
   }
 
-  // for (let i = 0; i < cardArr.length; i++) {
-  //   // if (cardArr[i])
-  //   console.log(cardArr[i]);
-  // }
-
+  //picks a random card from cardArr
   let pickRandomCard = function(arr) {
     let i = Math.floor(Math.random() * arr.length);
      return arr[i];
   }
 
+  // pop up the card that user has to find
   let popupGame = function() {
-    // pickRandomCard(cardArr);
     findMe = pickRandomCard(cardArr);
     $thisIsMe = $(findMe);
-    // showMe = findMe;
-    $(".modal-popup-wrapper").fadeIn(500);
 
+    $(".modal-popup-wrapper").fadeIn(500);
     $(".card-box").append(findMe);
-    // console.log(pickRandomCard(cardArr));
   }
 
   // replay function
@@ -127,11 +121,6 @@ $(document).ready(function() {
       });
     }, 2500);
 
-    // $thisIsMe.on("click", function() {
-    //   alert("You found me!");
-    // });
-    console.log($thisIsMe[0]);
-
     $card.on("click", function() {
       console.log($(this)[0]);
       // let $that = $(this)[0];
@@ -164,8 +153,8 @@ $(document).ready(function() {
           $(this).off();
           guesses = 3;
           $("#guesses").text(guesses);
-
           replayGame();
+          $(".modal-replay-wrapper p").text("Your guess is up! Play again?");
         }
       } else if ($(this)[0] === $thisIsMe[0] && guesses > 0) {
         $($(this).children().eq(0)).css({
@@ -179,6 +168,7 @@ $(document).ready(function() {
         guesses = 3;
         $("#guesses").text(guesses);
         replayGame();
+        $(".modal-replay-wrapper p").text("You got me! Play again?");
       }
     }); // End of current card click function
   } // End of playGame function
@@ -207,7 +197,7 @@ $(document).ready(function() {
   $goBtn.on("click", function() {
     $(".modal-popup-wrapper").fadeOut(500);
     playGame();
-  }); // End of goBtn click function
+  });
 
   $goBackBtn.on("click", function() {
     $("#modal-instruction-copy").fadeOut(500);
@@ -221,12 +211,11 @@ $(document).ready(function() {
     endGame();
   });
 
-  // when the user clicks replay
   $replayBtn.on("click", function() {
     $(".modal-replay-wrapper").fadeOut(500);
     popupGame();
   });
-  // when user clicks end
+
   $endGameBtn.on("click", function() {
     endGame();
   });
