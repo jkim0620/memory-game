@@ -43,6 +43,14 @@ $(document).ready(function() {
 
   let randomCard;
 
+  let $thisIsMe;
+
+  let $thisIsMeIndex;
+
+  let currentIndexNum;
+
+  let showMe;
+
   // Creating an array of cards
   for (let i = 0; i < $card.length; i++) {
     cardArr.push($card[i]);
@@ -61,18 +69,10 @@ $(document).ready(function() {
     return array;
   }
 
-  console.log(cardArr);
-
-  for (let i = 0; i < cardArr.length; i++) {
-    // if (cardArr[i])
-    console.log(cardArr[i]);
-  }
-
-  let pickRandomCard = function(arr) {
-    let i = Math.floor(Math.random() * arr.length);
-    return arr[i];
-    // return array[i];
-  }
+  // for (let i = 0; i < cardArr.length; i++) {
+  //   // if (cardArr[i])
+  //   console.log(cardArr[i]);
+  // }
 
   $startBtn.on("click", function() {
     console.log('click');
@@ -80,28 +80,25 @@ $(document).ready(function() {
     $(".modal-instruction-wrapper").fadeIn(500);
   });
 
+  let pickRandomCard = function(arr) {
+    let i = Math.floor(Math.random() * arr.length);
+     return arr[i];
+  }
+
   findMe = pickRandomCard(cardArr);
+  $thisIsMe = $(findMe);
+  showMe = findMe;
 
-  let $thisIsMe = $(findMe);
-  let $thisIsMeIndex;
-
-  let currentIndexNum;
-
-  console.log($thisIsMe);
-
-  let showMe = findMe;
-
-  $continueBtn.on("click", function() {
-    console.log('click');
-    $(".modal-instruction-wrapper").fadeOut(500);
+  let popupGame = function() {
+    pickRandomCard(cardArr);
     $(".modal-popup-wrapper").fadeIn(500);
 
     $(".card-box").append(showMe);
-    console.log(pickRandomCard(cardArr));
-  });
+    // console.log(pickRandomCard(cardArr));
+  }
 
-  $goBtn.on("click", function() {
-    $(".modal-popup-wrapper").fadeOut(500);
+  // game function
+  let playGame = function() {
     $(".card").remove();
     shuffleCards(cardArr);
     console.log(cardArr);
@@ -112,7 +109,7 @@ $(document).ready(function() {
         $thisIsMeIndex = i;
       }
     }
-    console.log($thisIsMeIndex);
+
     window.setTimeout(function() {
       $(".front").css({
         "display": "none"
@@ -120,7 +117,7 @@ $(document).ready(function() {
       $(".back").css({
         "display": "block"
       });
-    }, 1000);
+    }, 500);
     window.setTimeout(function() {
       $(".back").css({
         "display": "none"
@@ -152,7 +149,7 @@ $(document).ready(function() {
 
         let calculate = Math.abs($thisIsMeIndex - currentIndexNum);
 
-        // if there are remainding guesses
+        // if there are remaining guesses DO THIS
         if (guesses > 0) {
           guesses -= 1;
           $("#guesses").text(guesses);
@@ -162,9 +159,12 @@ $(document).ready(function() {
           } else if (calculate <= 6) {
             alert("cold");
           } // hot or cold
-        // if there are no remainding guesses
+        // if there are no remaining guesses DO THIS
         } else {
           $(this).off();
+          guesses = 3;
+          $("#guesses").text(guesses);
+          replayGame();
         }
       } else if ($(this)[0] === $thisIsMe[0] && guesses > 0) {
         $($(this).children().eq(0)).css({
@@ -175,9 +175,47 @@ $(document).ready(function() {
         });
         alert("You found me!");
         $(this).off();
+        guesses = 3;
+        $("#guesses").text(guesses);
+        replayGame();
       }
     }); // End of current card click function
+  } // End of playGame function
 
+  // end game function
+  let endGame = function() {
+    $("#modal-end").fadeIn(500);
+  }
+
+  // replay function
+  let replayGame = function() {
+    $(".modal-replay-wrapper").fadeIn(500);
+    // when the user clicks replay
+    $("#replayBtn").on("click", function() {
+      $(".modal-replay-wrapper").fadeOut(500);
+      pickRandomCard(cardArr);
+      findMe = pickRandomCard(cardArr);
+      $thisIsMe = $(findMe);
+      showMe = findMe;
+      $(".modal-popup-wrapper").fadeIn(500);
+      $(".card-box").append(showMe);
+    });
+    // when user clicks end
+    $("#endGameBtn").on("click", function() {
+      endGame();
+    });
+  }
+
+
+  $continueBtn.on("click", function() {
+    console.log('click');
+    $(".modal-instruction-wrapper").fadeOut(500);
+    popupGame();
+  });
+
+  $goBtn.on("click", function() {
+    $(".modal-popup-wrapper").fadeOut(500);
+    playGame();
   }); // End of goBtn click function
 
   $infoBtn.on("click", function() {
