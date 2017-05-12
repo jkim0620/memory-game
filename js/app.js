@@ -163,12 +163,14 @@ $(document).ready(function() {
         $($(this).children().eq(1)).css({
           "display": "block"
         });
-        alert("You found me!");
-        $(this).off();
-        guesses = 3;
-        $("#guesses").text(guesses);
-        replayGame();
-        $(".modal-replay-wrapper p").text("You got me! Play again?");
+        window.setTimeout(function() {
+          alert("You found me!");
+          $(this).off();
+          guesses = 3;
+          $("#guesses").text(guesses);
+          replayGame();
+          $(".modal-replay-wrapper p").text("You got me! Play again?");
+        }, 700);
       }
     }); // End of current card click function
   } // End of playGame function
