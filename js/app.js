@@ -30,7 +30,9 @@ $(document).ready(function() {
   let $goBtn = $("#goBtn");
   let $infoBtn = $("#infoBtn");
   let $goBackBtn = $("#goBackBtn");
-  let $exit = $("#exit");
+  let $replayBtn = $("#replayBtn");
+  let $endGameBtn = $("#endGameBtn");
+  let $exitBtn = $("#exitBtn");
 
   console.log($startBtn);
 
@@ -74,27 +76,25 @@ $(document).ready(function() {
   //   console.log(cardArr[i]);
   // }
 
-  $startBtn.on("click", function() {
-    console.log('click');
-    $(".modal-intro-wrapper").fadeOut(500);
-    $(".modal-instruction-wrapper").fadeIn(500);
-  });
-
   let pickRandomCard = function(arr) {
     let i = Math.floor(Math.random() * arr.length);
      return arr[i];
   }
 
-  findMe = pickRandomCard(cardArr);
-  $thisIsMe = $(findMe);
-  showMe = findMe;
-
   let popupGame = function() {
-    pickRandomCard(cardArr);
+    // pickRandomCard(cardArr);
+    findMe = pickRandomCard(cardArr);
+    $thisIsMe = $(findMe);
+    // showMe = findMe;
     $(".modal-popup-wrapper").fadeIn(500);
 
-    $(".card-box").append(showMe);
+    $(".card-box").append(findMe);
     // console.log(pickRandomCard(cardArr));
+  }
+
+  // replay function
+  let replayGame = function() {
+    $(".modal-replay-wrapper").fadeIn(500);
   }
 
   // game function
@@ -164,6 +164,7 @@ $(document).ready(function() {
           $(this).off();
           guesses = 3;
           $("#guesses").text(guesses);
+
           replayGame();
         }
       } else if ($(this)[0] === $thisIsMe[0] && guesses > 0) {
@@ -187,25 +188,15 @@ $(document).ready(function() {
     $("#modal-end").fadeIn(500);
   }
 
-  // replay function
-  let replayGame = function() {
-    $(".modal-replay-wrapper").fadeIn(500);
-    // when the user clicks replay
-    $("#replayBtn").on("click", function() {
-      $(".modal-replay-wrapper").fadeOut(500);
-      pickRandomCard(cardArr);
-      findMe = pickRandomCard(cardArr);
-      $thisIsMe = $(findMe);
-      showMe = findMe;
-      $(".modal-popup-wrapper").fadeIn(500);
-      $(".card-box").append(showMe);
-    });
-    // when user clicks end
-    $("#endGameBtn").on("click", function() {
-      endGame();
-    });
-  }
+  $startBtn.on("click", function() {
+    console.log('click');
+    $(".modal-intro-wrapper").fadeOut(500);
+    $(".modal-instruction-wrapper").fadeIn(500);
+  });
 
+  $endBtn.on("click", function() {
+    endGame();
+  });
 
   $continueBtn.on("click", function() {
     console.log('click');
@@ -218,21 +209,26 @@ $(document).ready(function() {
     playGame();
   }); // End of goBtn click function
 
-  $infoBtn.on("click", function() {
-    $("#modal-instruction-copy").fadeIn(500);
-  });
-
   $goBackBtn.on("click", function() {
     $("#modal-instruction-copy").fadeOut(500);
   });
 
-  $exit.on("click", function() {
-    $(".modal-wrapper-2").fadeOut(500);
+  $infoBtn.on("click", function() {
+    $("#modal-instruction-copy").fadeIn(500);
   });
 
-  let $test = $("#test");
+  $exitBtn.on("click", function() {
+    endGame();
+  });
 
-
-
+  // when the user clicks replay
+  $replayBtn.on("click", function() {
+    $(".modal-replay-wrapper").fadeOut(500);
+    popupGame();
+  });
+  // when user clicks end
+  $endGameBtn.on("click", function() {
+    endGame();
+  });
 
 });
