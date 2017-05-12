@@ -28,12 +28,15 @@ $(document).ready(function() {
   let $endBtn = $("#endBtn");
   let $continueBtn = $("#continueBtn");
   let $goBtn = $("#goBtn");
+  let $infoBtn = $("#infoBtn");
+  let $goBackBtn = $("#goBackBtn");
   let $exit = $("#exit");
 
   console.log($startBtn);
 
   let findMe;
   let clickedCard;
+  let guesses = 3;
 
   let $card = $(".card");
   let cardArr = [];
@@ -79,7 +82,7 @@ $(document).ready(function() {
 
   findMe = pickRandomCard(cardArr);
 
-  let $thisIsMe = $(findMe) ;
+  let $thisIsMe = $(findMe);
   let $thisIsMeIndex;
 
   let currentIndexNum;
@@ -139,7 +142,31 @@ $(document).ready(function() {
       // $(this).eq(index#);
       clickedCard = $(this)[0];
       console.log(clickedCard);
-      if ($(this)[0] === $thisIsMe[0]) {
+
+      if ($(this)[0] !== $thisIsMe[0]) {
+        for (let i = 0; i < cardArr.length; i++) {
+          if (cardArr[i] === $(this)[0]) {
+            currentIndexNum = i;
+          }
+        }
+
+        let calculate = Math.abs($thisIsMeIndex - currentIndexNum);
+
+        // if there are remainding guesses
+        if (guesses > 0) {
+          guesses -= 1;
+          $("#guesses").text(guesses);
+          // hot or cold
+          if (calculate <= 1) {
+            alert("hot");
+          } else if (calculate <= 6) {
+            alert("cold");
+          } // hot or cold
+        // if there are no remainding guesses
+        } else {
+          $(this).off();
+        }
+      } else if ($(this)[0] === $thisIsMe[0] && guesses > 0) {
         $($(this).children().eq(0)).css({
           "display": "none"
         });
@@ -147,41 +174,19 @@ $(document).ready(function() {
           "display": "block"
         });
         alert("You found me!");
-      } else {
-        // var num = index number of thisIsMe - clickedCard
-        // if num < 0 num =- num;
-
-        // if num <= 2 alet("hot")
-        // else if num <= 4 alert(cold)
-
-        for (let i = 0; i < cardArr.length; i++) {
-          if (cardArr[i] === $(this)[0]) {
-            currentIndexNum = i;
-          }
-        }
-
-        let calculate = $thisIsMeIndex - currentIndexNum;
-
-        if (calculate < 0) {
-          calculate =- calculate;
-        } else {
-          return calculate;
-        }
-
-        if (calculate <= 2) {
-          alert("hot");
-        } else if (calculate <= 6) {
-          alert("cold");
-        }
-
+        $(this).off();
       }
-
     }); // End of current card click function
 
   }); // End of goBtn click function
 
+  $infoBtn.on("click", function() {
+    $("#modal-instruction-copy").fadeIn(500);
+  });
 
-
+  $goBackBtn.on("click", function() {
+    $("#modal-instruction-copy").fadeOut(500);
+  });
 
   $exit.on("click", function() {
     $(".modal-wrapper-2").fadeOut(500);
