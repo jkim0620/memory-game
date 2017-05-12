@@ -4,7 +4,6 @@
 
 
 body {
-  /*font-family: */
   box-sizing: border-box;
   /*background: #2a2a30;*/
   background: #3a3a4f;
@@ -18,8 +17,15 @@ header {
   display: flex;
 }
 
+#guesses {
+  color: #f44242;
+  font-size: 22px;
+}
+
 .score {
   flex-grow: 3;
+  /*justify-content: flex-end;*/
+  font-size: 20px;
 }
 
 .infoBtn-wrapper, .exitBtn-wrapper {
@@ -208,22 +214,18 @@ header {
 }
 
 .front, .back {
-  border-radius: 5px;
+  border-radius: 15px;
   height: 80px;
   width: 80px;
   padding: 20px;
   flex: 1;
-  /*flex-basis: 30%;*/
+  margin-top: 10px;
+  border: 5px #3a3a4f solid;
 }
 
 .front {
   background: white;
-  border: 1px #000 solid;
 }
-
-/*.back-1, .back-2, .back-3, .back-4, .back-5, .back-6, .back-7, .back-8 {
-  background: orange;
-}*/
 
 .back {
   background-color: #f44242;
