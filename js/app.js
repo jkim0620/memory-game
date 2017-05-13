@@ -33,6 +33,9 @@ $(document).ready(function() {
   let $replayBtn = $("#replayBtn");
   let $endGameBtn = $("#endGameBtn");
   let $exitBtn = $("#exitBtn");
+  let $returnBtn = $("#returnBtn");
+  let $resumeBtn = $("#resumeBtn");
+  let $quitBtn = $("#quitBtn");
 
   console.log($startBtn);
 
@@ -197,11 +200,26 @@ $(document).ready(function() {
 
           // hot or cold clues
           if (calculateDistance() > 3) {
-            alert("cold");
+            window.setTimeout(function() {
+              $("#coldAlert").fadeIn(100);
+            }, 200);
+            window.setTimeout(function() {
+              $("#coldAlert").fadeOut(100)
+            }, 1200);
           } else if (calculateDistance() > 1.5) {
-            alert("Getting warm!");
+            window.setTimeout(function() {
+              $("#warmAlert").fadeIn(100);
+            }, 200);
+            window.setTimeout(function() {
+              $("#warmAlert").fadeOut(100)
+            }, 1200);
           } else {
-            alert("hot");
+            window.setTimeout(function() {
+              $("#hotAlert").fadeIn(100);
+            }, 200);
+            window.setTimeout(function() {
+              $("#hotAlert").fadeOut(100)
+            }, 1200);
           }
 
         // if there are no remaining guesses DO THIS
@@ -223,13 +241,18 @@ $(document).ready(function() {
           "display": "block"
         });
         window.setTimeout(function() {
-          alert("You found me!");
+          $("#foundMeAlert").fadeIn(100);
+        }, 200);
+        window.setTimeout(function() {
+          $("#foundMeAlert").fadeOut(100)
+        }, 1200);
+        window.setTimeout(function() {
           $(this).off();
           guesses = 3;
           $("#guesses").text(guesses);
           replayGame();
           $(".modal-replay-wrapper p").text("You got me! Play again?");
-        }, 700);
+        }, 2100);
       }
     }); // End of current card click function
   } // End of playGame function
@@ -240,7 +263,6 @@ $(document).ready(function() {
   }
 
   $startBtn.on("click", function() {
-    console.log('click');
     $(".modal-intro-wrapper").fadeOut(500);
     $(".modal-instruction-wrapper").fadeIn(500);
   });
@@ -269,7 +291,7 @@ $(document).ready(function() {
   });
 
   $exitBtn.on("click", function() {
-    endGame();
+    $("#modal-confirm").fadeIn(500);
   });
 
   $replayBtn.on("click", function() {
@@ -281,11 +303,18 @@ $(document).ready(function() {
     endGame();
   });
 
+  $returnBtn.on("click", function() {
+    $("#modal-replay").fadeOut(200);
+    $("#modal-end").fadeOut(500);
+    $("#modal-intro").fadeIn(500);
+  });
 
-  //
-  // let calculateDistance = function() {
-  //
-  // }
+  $resumeBtn.on("click", function() {
+    $("#modal-confirm").fadeOut(500);
+  });
 
-
+  $quitBtn.on("click", function() {
+    $("#modal-confirm").fadeOut(500);
+    endGame();
+  });
 });
