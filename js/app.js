@@ -44,18 +44,74 @@ $(document).ready(function() {
   let cardArr = [];
 
   let randomCard;
-
   let $thisIsMe;
-
   let $thisIsMeIndex;
-
   let currentIndexNum;
-
   let showMe;
+  let x1;
+  let x2;
+  let y1;
+  let y2;
 
   // Creating an array of cards
   for (let i = 0; i < $card.length; i++) {
     cardArr.push($card[i]);
+  }
+
+  // Calculate the distance between player card and clicked card
+  let calculateDistance = function() {
+    if ($thisIsMeIndex === 0 || $thisIsMeIndex === 1 || $thisIsMeIndex === 2 || $thisIsMeIndex === 3 || $thisIsMeIndex === 4 || $thisIsMeIndex === 5) {
+      y1 = 4;
+    } else if ($thisIsMeIndex === 6 || $thisIsMeIndex === 7 || $thisIsMeIndex === 8 || $thisIsMeIndex === 9 || $thisIsMeIndex === 10 || $thisIsMeIndex === 11) {
+      y1 = 3;
+    } else if ($thisIsMeIndex === 12 || $thisIsMeIndex === 13 || $thisIsMeIndex === 14 || $thisIsMeIndex === 15 || $thisIsMeIndex === 16 || $thisIsMeIndex === 17) {
+      y1 = 2;
+    } else if ($thisIsMeIndex === 18 || $thisIsMeIndex === 19 || $thisIsMeIndex === 20 || $thisIsMeIndex === 21 || $thisIsMeIndex === 22 || $thisIsMeIndex === 23) {
+      y1 = 1;
+    }
+
+    if ($thisIsMeIndex === 5 || $thisIsMeIndex === 11 || $thisIsMeIndex === 17 || $thisIsMeIndex === 23) {
+      x1 = 6;
+    } else if ($thisIsMeIndex === 4 || $thisIsMeIndex === 10 || $thisIsMeIndex === 16 || $thisIsMeIndex === 22) {
+      x1 = 5;
+    } else if ($thisIsMeIndex === 3 || $thisIsMeIndex === 9 || $thisIsMeIndex === 15 || $thisIsMeIndex === 21) {
+      x1 = 4;
+    } else if ($thisIsMeIndex === 2 || $thisIsMeIndex === 8 || $thisIsMeIndex === 14 || $thisIsMeIndex === 20) {
+      x1 = 3;
+    } else if ($thisIsMeIndex === 1 || $thisIsMeIndex === 7 || $thisIsMeIndex === 13 || $thisIsMeIndex === 19) {
+      x1 = 2;
+    } else if ($thisIsMeIndex === 0 || $thisIsMeIndex === 6 || $thisIsMeIndex === 12 || $thisIsMeIndex === 18) {
+      x1 = 1;
+    }
+
+    if (currentIndexNum === 0 || currentIndexNum === 1 || currentIndexNum === 2 || currentIndexNum === 3 || currentIndexNum === 4 || currentIndexNum === 5) {
+      y2 = 4;
+    } else if (currentIndexNum === 6 || currentIndexNum === 7 || currentIndexNum === 8 || currentIndexNum === 9 || currentIndexNum === 10 || currentIndexNum === 11) {
+      y2 = 3;
+    } else if (currentIndexNum === 12 || currentIndexNum === 13 || currentIndexNum === 14 || currentIndexNum === 15 || currentIndexNum === 16 || currentIndexNum === 17) {
+      y2 = 2;
+    } else if (currentIndexNum === 18 || currentIndexNum === 19 || currentIndexNum === 20 || currentIndexNum === 21 || currentIndexNum === 22 || currentIndexNum === 23) {
+      y2 = 1;
+    }
+
+    if (currentIndexNum === 5 || currentIndexNum === 11 || currentIndexNum === 17 || currentIndexNum === 23) {
+      x2 = 6;
+    } else if (currentIndexNum === 4 || currentIndexNum === 10 || currentIndexNum === 16 || currentIndexNum === 22) {
+      x2 = 5;
+    } else if (currentIndexNum === 3 || currentIndexNum === 9 || currentIndexNum === 15 || currentIndexNum === 21) {
+      x2 = 4;
+    } else if (currentIndexNum === 2 || currentIndexNum === 8 || currentIndexNum === 14 || currentIndexNum === 20) {
+      x2 = 3;
+    } else if (currentIndexNum === 1 || currentIndexNum === 7 || currentIndexNum === 13 || currentIndexNum === 19) {
+      x2 = 2;
+    } else if (currentIndexNum === 0 || currentIndexNum === 6 || currentIndexNum === 12 || currentIndexNum === 18) {
+      x2 = 1;
+    }
+
+    // Got this code from stackoverflow http://stackoverflow.com/questions/20916953/get-distance-between-two-points-in-canvas
+    if (!x2) x2 = 0;
+    if (!y2) y2 = 0;
+    return Math.sqrt((x2-x1)*(x2-x1)+(y2-y1)*(y2-y1));
   }
 
   // Function for shuffling cards
@@ -122,41 +178,44 @@ $(document).ready(function() {
     }, 2500);
 
     $card.on("click", function() {
-      console.log($(this)[0]);
-      // let $that = $(this)[0];
-      console.log($(this).children());
-      // $(this).eq(index#);
       clickedCard = $(this)[0];
-      console.log(clickedCard);
 
+      // checking if the clickedCard is the answer
       if ($(this)[0] !== $thisIsMe[0]) {
+
         for (let i = 0; i < cardArr.length; i++) {
+          // getting the index number of clicked item
           if (cardArr[i] === $(this)[0]) {
             currentIndexNum = i;
           }
         }
 
-        let calculate = Math.abs($thisIsMeIndex - currentIndexNum);
-
         // if there are remaining guesses DO THIS
         if (guesses > 0) {
           guesses -= 1;
           $("#guesses").text(guesses);
-          // hot or cold
-          if (calculate <= 1) {
-            alert("hot");
-          } else if (calculate <= 6) {
+
+          // hot or cold clues
+          if (calculateDistance() > 3) {
             alert("cold");
-          } // hot or cold
+          } else if (calculateDistance() > 1.5) {
+            alert("Getting warm!");
+          } else {
+            alert("hot");
+          }
+
         // if there are no remaining guesses DO THIS
-        } else {
+      } else if (guesses === 0) {
           $(this).off();
-          guesses = 3;
-          $("#guesses").text(guesses);
+
           replayGame();
-          $(".modal-replay-wrapper p").text("Your guess is up! Play again?");
+
+          $(".modal-replay-wrapper p").text("Your guess is up! Play again?")
+          guesses = 3;
+          $("#guesses").text(guesses);;
         }
-      } else if ($(this)[0] === $thisIsMe[0] && guesses > 0) {
+
+      } else if ($(this)[0] === $thisIsMe[0] && guesses >= 0) {
         $($(this).children().eq(0)).css({
           "display": "none"
         });
@@ -221,5 +280,12 @@ $(document).ready(function() {
   $endGameBtn.on("click", function() {
     endGame();
   });
+
+
+  //
+  // let calculateDistance = function() {
+  //
+  // }
+
 
 });
