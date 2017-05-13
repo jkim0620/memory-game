@@ -274,33 +274,31 @@ header {
 
 .alert-wrapper {
   position: fixed;
-  top: 3%;
-  left: 3%;
+  top: 30%;
+  left: 45%;
   width: 150px;
   height: 150px;
   border-radius: 50%;
-  border: 10px #3a3a4f solid;
+  border: 10px #181b21 solid;
   display: none;
   text-align: center;
 }
 
 #foundMeAlert {
-  top: 30%;
-  left: 40%;
-  width: 200px;
+  left:37%;
+  width: 300px;
   height: 80px;
   border-radius: 15px;
-  border: 10px white solid;
-  background-color: black;
+  background-color: #f44242;
   color: white;
 }
 
 #foundMeAlert p {
-  margin-top: 30px;
+  margin-top: 10%;
 }
 
 .alert-wrapper p {
-  margin-top: 40%;
+  margin-top: 45%;
 }
 
 #hotAlert {
@@ -315,11 +313,6 @@ header {
 #coldAlert {
   background-color: #a2f9e8;
   color: #3a3a4f;
-}
-
-#foundMeAlert {
-  background-color: #a2f9e8;
-  color: white;
 }
 
 @media (max-width: 870px) {
