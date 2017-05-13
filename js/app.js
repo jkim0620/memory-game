@@ -117,6 +117,25 @@ $(document).ready(function() {
     return Math.sqrt((x2-x1)*(x2-x1)+(y2-y1)*(y2-y1));
   }
 
+  // flip the cards face down
+  let flipCardFaceDown = function() {
+    $(".back").css({
+      "display": "none"
+    });
+    $(".front").css({
+      "display": "block"
+    });
+  }
+
+  let flipCardFaceUp = function() {
+    $(".front").css({
+      "display": "none"
+    });
+    $(".back").css({
+      "display": "block"
+    });
+  }
+
   // Function for shuffling cards
   // Couldn't figure out how to shuffle an array so got some help from stackoverflow
   // (http://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array)
@@ -143,6 +162,7 @@ $(document).ready(function() {
 
     $(".modal-popup-wrapper").fadeIn(500);
     $(".card-box").append(findMe);
+
   }
 
   // replay function
@@ -163,22 +183,17 @@ $(document).ready(function() {
       }
     }
 
+    // window.setTimeout(function() {
+    //   $(".front").css({
+    //     "display": "none"
+    //   });
+    //   $(".back").css({
+    //     "display": "block"
+    //   });
+    // }, 500);
     window.setTimeout(function() {
-      $(".front").css({
-        "display": "none"
-      });
-      $(".back").css({
-        "display": "block"
-      });
-    }, 500);
-    window.setTimeout(function() {
-      $(".back").css({
-        "display": "none"
-      });
-      $(".front").css({
-        "display": "block"
-      });
-    }, 2500);
+      flipCardFaceDown();
+    }, 2000);
 
     $card.on("click", function() {
       clickedCard = $(this)[0];
@@ -225,7 +240,7 @@ $(document).ready(function() {
         // if there are no remaining guesses DO THIS
       } else if (guesses === 0) {
           $(this).off();
-
+          flipCardFaceUp();
           replayGame();
 
           $(".modal-replay-wrapper p").text("Your guess is up! Play again?")
@@ -250,6 +265,7 @@ $(document).ready(function() {
           $(this).off();
           guesses = 3;
           $("#guesses").text(guesses);
+          flipCardFaceUp();
           replayGame();
           $(".modal-replay-wrapper p").text("You got me! Play again?");
         }, 2100);
