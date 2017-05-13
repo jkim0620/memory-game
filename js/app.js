@@ -201,24 +201,24 @@ $(document).ready(function() {
           // hot or cold clues
           if (calculateDistance() > 3) {
             window.setTimeout(function() {
-              $("#coldAlert").fadeIn(100);
+              $("#coldAlert").show(500);
             }, 200);
             window.setTimeout(function() {
-              $("#coldAlert").fadeOut(100)
+              $("#coldAlert").fadeOut(500)
             }, 1200);
           } else if (calculateDistance() > 1.5) {
             window.setTimeout(function() {
-              $("#warmAlert").fadeIn(100);
+              $("#warmAlert").show(500);
             }, 200);
             window.setTimeout(function() {
-              $("#warmAlert").fadeOut(100)
+              $("#warmAlert").fadeOut(500)
             }, 1200);
           } else {
             window.setTimeout(function() {
-              $("#hotAlert").fadeIn(100);
+              $("#hotAlert").show(500);
             }, 200);
             window.setTimeout(function() {
-              $("#hotAlert").fadeOut(100)
+              $("#hotAlert").fadeOut(500)
             }, 1200);
           }
 
@@ -241,11 +241,11 @@ $(document).ready(function() {
           "display": "block"
         });
         window.setTimeout(function() {
-          $("#foundMeAlert").fadeIn(100);
+          $("#foundMeAlert").fadeIn(500);
         }, 200);
         window.setTimeout(function() {
-          $("#foundMeAlert").fadeOut(100)
-        }, 1200);
+          $("#foundMeAlert").fadeOut()
+        }, 1500);
         window.setTimeout(function() {
           $(this).off();
           guesses = 3;
