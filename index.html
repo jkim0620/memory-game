@@ -61,23 +61,61 @@
 		</div>
     <!-- /modal-popup -->
 
-    <!-- modal next game -->
+    <!-- modal replay game -->
     <div id="modal-replay" class="modal-replay-wrapper">
 			<div class="modal-replay-content">
-        <p>"Your guess is up!<br /> Would you like to try again?"</p>
+        <p></p>
         <button id="replayBtn">REPLAY</button>
         <button id="endGameBtn">END</button>
 			</div>
 		</div>
-    <!-- /modal next game -->
+    <!-- /modal replay game -->
+
+    <!-- modal confirm end game -->
+    <div id="modal-confirm" class="modal-confirm-wrapper">
+			<div class="modal-confirm-content">
+        <p>Are you sure you want to quit playing?</p>
+        <button id="resumeBtn">RESUME</button>
+        <button id="quitBtn">END</button>
+			</div>
+		</div>
+    <!-- /modal confirm end game -->
 
     <!-- modal end game -->
     <div id="modal-end" class="modal-intro-wrapper">
 			<div class="modal-intro-content">
         <h1>BYE</h1>
+        <button id="returnBtn">GO BACK</button>
 			</div>
 		</div>
     <!-- /modal end game -->
+
+    <!-- alerts -->
+    <div id="hotAlert" class="alert-wrapper">
+      <div class="alert-content">
+        <p>HOT!</p>
+      </div>
+    </div>
+
+    <div id="warmAlert" class="alert-wrapper">
+      <div class="alert-content">
+        <p>GETIING WARM</p>
+      </div>
+    </div>
+
+    <div id="coldAlert" class="alert-wrapper">
+      <div class="alert-content">
+        <p>COLD</p>
+      </div>
+    </div>
+
+    <div id="foundMeAlert" class="alert-wrapper">
+      <div class="alert-content">
+        <p>YOU FOUND ME!</p>
+      </div>
+    </div>
+    <!-- /alerts -->
+
 
     <!-- Game Board Wrapper-->
     <div class="game-wrapper">

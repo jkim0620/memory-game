@@ -55,7 +55,7 @@ header {
   font-size: 20px;
 }
 
-.game-wrapper, .modal-intro-wrapper, .modal-instruction-wrapper, .modal-instruction-wrapper-copy, .modal-popup-wrapper, .modal-replay-wrapper {
+.game-wrapper, .modal-intro-wrapper, .modal-instruction-wrapper, .modal-instruction-wrapper-copy, .modal-popup-wrapper, .modal-replay-wrapper, .modal-confirm-wrapper {
 	position: fixed;
 	top: 0;
 	left: 0;
@@ -111,14 +111,18 @@ header {
   text-shadow: 1px 1px 3px #3a3a4f;
 }
 
-.modal-instruction-wrapper, .modal-instruction-wrapper-copy, .modal-popup-wrapper, .modal-replay-wrapper {
+.modal-instruction-wrapper, .modal-instruction-wrapper-copy, .modal-popup-wrapper, .modal-replay-wrapper, .modal-confirm-wrapper {
   background-color: rgba(162, 249, 232, 0.8);
   display: none;
 }
 
-.modal-instruction-content, .modal-instruction-content-copy, .modal-popup-content, .modal-replay-content {
-  background-color: rgba(252, 252, 252, 0.7);
+.modal-instruction-content, .modal-popup-content, .modal-replay-content, .modal-confirm-content {
+  background-color: rgba(252, 252, 252, 1);
   text-align: center;
+}
+
+.modal-instruction-content-copy {
+  background-color: rgba(252, 252, 252, 0.7);
 }
 
 .modal-instruction-content h3, .modal-instruction-content-copy h3 {
@@ -130,11 +134,29 @@ header {
   font-size: 20px;
 }
 
+.modal-replay-content p {
+  padding-top: 40%;
+}
+
+.modal-confirm-content {
+  margin: auto;
+	width: 50%;
+  max-width: 400px;
+  height: 200px;
+	padding: 50px 70px;
+	border-radius: 10px;
+  border: none;
+  text-align: center;
+  font-size: 20px;
+}
+
+/*.modal-confirm-content p*/
+
 #modal-end {
   display: none;
 }
 
-#startBtn, #endBtn, #continueBtn, #goBtn, #goBackBtn, #replayBtn, #endGameBtn {
+#startBtn, #endBtn, #continueBtn, #goBtn, #goBackBtn, #replayBtn, #endGameBtn, #returnBtn, #resumeBtn, #quitBtn {
   width: 200px;
   margin: 0 auto;
   border: none;
@@ -150,12 +172,19 @@ header {
   text-shadow: 1px 1px 2px #3a3a4f;
 }
 
-#startBtn, #replayBtn {
+#startBtn, #replayBtn, #returnBtn, #resumeBtn {
   background-color: #f44242;
   color: white;
 }
 
-#endBtn, #endGameBtn {
+#replayBtn, #endGameBtn, #resumeBtn, #quitBtn {
+  display: inline;
+  width: 150px;
+  font-size: 22px;
+  margin: 20px 5px;
+}
+
+#endBtn, #endGameBtn, #quitBtn {
   background-color: white;
   color: #3a3a4f;
 }
@@ -241,6 +270,56 @@ header {
 .back {
   background-color: #f44242;
   display: none;
+}
+
+.alert-wrapper {
+  position: fixed;
+  top: 3%;
+  left: 3%;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 10px #3a3a4f solid;
+  display: none;
+  text-align: center;
+}
+
+#foundMeAlert {
+  top: 30%;
+  left: 40%;
+  width: 200px;
+  height: 80px;
+  border-radius: 15px;
+  border: 10px white solid;
+  background-color: black;
+  color: white;
+}
+
+#foundMeAlert p {
+  margin-top: 30px;
+}
+
+.alert-wrapper p {
+  margin-top: 40%;
+}
+
+#hotAlert {
+  background-color: #f44242;
+  color: white;
+}
+
+#warmAlert {
+  background-color: white;
+}
+
+#coldAlert {
+  background-color: #a2f9e8;
+  color: #3a3a4f;
+}
+
+#foundMeAlert {
+  background-color: #a2f9e8;
+  color: white;
 }
 
 @media (max-width: 870px) {
