@@ -1,12 +1,14 @@
 body {
   box-sizing: border-box;
   background: #3a3a4f;
+  /*background: #f44242;*/
   font-family: "Baloo", cursive;
   color: #3a3a4f;
 }
 
 header {
   background-color: #a2f9e8;
+  /*background: #3a3a4f;*/
   padding: 0 50px;
   display: flex;
 }
@@ -292,6 +294,7 @@ header {
 }
 
 .back {
+  /*background: #3a3a4f;*/
   background-color: #f44242;
   padding: 0;
 }
@@ -349,7 +352,7 @@ header {
 /* Media Query */
 @media (max-width: 700px) {
   header {
-    padding: 10px;
+    padding: 20px;
   }
 
   .myName {
@@ -360,7 +363,7 @@ header {
   .modal-intro-content, .modal-popup-content, .modal-replay-content {
     width: 300px;
     height: 300px;
-    margin-top: 70px;
+    margin-top: 20%;
   }
 
   .modal-instruction-content, .modal-instruction-content-copy {
@@ -446,6 +449,11 @@ header {
     font-size: 20px;
   }
 
+  .guess-who-img {
+    height: 80%;
+    margin-left: 10%;
+  }
+
   .alert-wrapper {
     top: 30%;
     left: 40%;
@@ -500,6 +508,7 @@ header {
 }
 
 @media (max-width: 580px) {
+
   #foundMeAlert {
     left: 20%;
   }

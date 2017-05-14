@@ -45,7 +45,7 @@
 ### Unsolved problems
 
 * **Flipping effect**
-* **Adding keypress functions** for better user experience
+* **Adding keypress functions** for a better user experience
 
 ---
 
@@ -85,4 +85,4 @@ let shuffleCards = function(array) {
 #
 ![screen shot 2017-05-14 at 2 57 17 pm](https://cloud.githubusercontent.com/assets/18605009/26037127/e65caffe-38ba-11e7-9a7f-ceb1bc3c6c0a.png)
 
-**Wonderful characters of 'Guess Who?' board game by -Hasbro**
+**##Wonderful characters of 'Guess Who?' board game by -Hasbro**
