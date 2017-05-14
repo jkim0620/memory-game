@@ -45,28 +45,35 @@ Your app must:
 
 ---
 
-### Instructions
+### How to play
 
-* **1.** User will be given a random card.
-* **2.** Cards will flash instantly face up and then back down.
-* **3.** User gets 3 guesses to find the matching card.
-* **4.** User will be hinted with hot & cold clues.
+* User will be given a random card.
+* Cards will flash instantly face up and then back down.
+* User gets 3 guesses to find the matching card.
+* User will be hinted with hot & cold clues.
 
 ---
 
-### Technologies
+### Built with
 
-* **jQuery** User will be given a random card.
-* **HTML5** Cards will flash instantly face up and then back down.
-* **CSS3** User gets 3 guesses to find the matching card.
+* **jQuery** for DOM Manipulation - popups, modals, alert, click functions, Math functions, time setting etc.
+* **HTML5**
+* **CSS3**
+* **Flexbox** for grid system and responsive web page
+
+---
+
+### Unsolved problems
+
+* **Flipping effect**
+* **Adding keypress functions** for better user experience
 
 ---
 
 ### References
 
-* **Stackoverflow**   
-
-  - http://stackoverflow.com/questions/20916953/get-distance-between-two-points-in-canvas
+* **Stackoverflow:**
+http://stackoverflow.com/questions/20916953/get-distance-between-two-points-in-canvas
 
 ```javascript
 if (!x2) x2 = 0;
@@ -74,7 +81,7 @@ if (!y2) y2 = 0;
 return Math.sqrt((x2 - x1) * (x2 - x1) + (y2 - y1) * (y2 - y1));
 ```
 
-  - http://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array
+http://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array
 ```javascript
 let shuffleCards = function(array) {
   for (let i = array.length - 1; i > 0; i--) {
@@ -87,13 +94,14 @@ let shuffleCards = function(array) {
 }
 ```
 
-* **W3Schools**
-* **MDN**
-* **CSS-Tricks**
+* **W3Schools:** http://www.w3schools.com
+* **jQeury API Documentation:** http://api.jquery.com/
+* **CSS-Tricks(Flexbox):** https://css-tricks.com/snippets/css/a-guide-to-flexbox/
 
 ---
 
-### Potential Project Ideas
+### Special Thanks to
+# ![](img/guess-who-charac.tiff)
 
 ##### Simon
 A game with 4 colored "buttons". In this game, a round consists of lighting up one or more buttons in a random order, after which the player must reproduce that order by pressing the buttons. As the game progresses, the number of buttons to be pressed increases.
