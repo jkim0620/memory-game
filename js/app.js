@@ -182,10 +182,22 @@ $(document).ready(function() {
       }
     }
     window.setTimeout(function() {
+      flipCardFaceUp();
+      // $(".card").addClass("flip");
+    }, 500);
+    window.setTimeout(function() {
       flipCardFaceDown();
-    }, 2000);
+      // $(".card").removeClass("flip");
+    }, 2500);
 
     $card.on("click", function() {
+      $($(this).children().eq(0)).css({
+        "display": "none"
+      });
+      $($(this).children().eq(1)).css({
+        "display": "block"
+      });
+
       clickedCard = $(this)[0];
 
       // checking if the clickedCard is the answer
@@ -209,12 +221,18 @@ $(document).ready(function() {
               $("#coldAlert").show(500);
             }, 200);
             window.setTimeout(function() {
-              $("#coldAlert").fadeOut(500)
+              flipCardFaceDown();
+            }, 1000);
+            window.setTimeout(function() {
+              $("#coldAlert").fadeOut(500);
             }, 1200);
           } else if (calculateDistance() > 1.5) {
             window.setTimeout(function() {
               $("#warmAlert").show(500);
             }, 200);
+            window.setTimeout(function() {
+              flipCardFaceDown();
+            }, 1000);
             window.setTimeout(function() {
               $("#warmAlert").fadeOut(500)
             }, 1200);
@@ -223,34 +241,33 @@ $(document).ready(function() {
               $("#hotAlert").show(500);
             }, 200);
             window.setTimeout(function() {
+              flipCardFaceDown();
+            }, 1000);
+            window.setTimeout(function() {
               $("#hotAlert").fadeOut(500)
             }, 1200);
           }
 
-        // if there are no remaining guesses DO THIS
-      } else if (guesses === 0) {
-          $(this).off();
-          flipCardFaceUp();
-          replayGame();
-
-          $(".modal-replay-wrapper p").text("Your guess is up! Play again?")
-          guesses = 3;
-          $("#guesses").text(guesses);;
+          // if there are no remaining guesses DO THIS
+          window.setTimeout(function() {
+            if (guesses === 0) {
+              flipCardFaceUp();
+              $(this).off();
+              replayGame();
+              $(".modal-replay-wrapper p").text("Your guess is up! Play again?")
+              guesses = 3;
+              $("#guesses").text(guesses);;
+            }
+          }, 1600);
         }
 
       } else if ($(this)[0] === $thisIsMe[0] && guesses >= 0) {
-        $($(this).children().eq(0)).css({
-          "display": "none"
-        });
-        $($(this).children().eq(1)).css({
-          "display": "block"
-        });
         window.setTimeout(function() {
           $("#foundMeAlert").fadeIn(500);
-        }, 200);
+        }, 400);
         window.setTimeout(function() {
           $("#foundMeAlert").fadeOut()
-        }, 1500);
+        }, 1700);
         window.setTimeout(function() {
           $(this).off();
           guesses = 3;
