@@ -45,15 +45,51 @@ Your app must:
 
 ---
 
-### User Story
+### Instructions
 
-* **Pseudocode** Start by stating the problems in plain text. This will help you guide your process and understand the problem better.
-* **Break the project down into different components** (data, presentation, views, style, DOM manipulation) and brainstorm each component individually. Use whiteboards!
-* **Use your Development Tools** (console.log, inspector, alert statements, etc) to debug and solve problems
-* **Work through the lessons in class** & ask questions when you need to! Think about adding relevant code to your game each night, instead of, you know... _procrastinating_.
-* **Commit early, commit often. [VERY IMPORTANT]** Don’t be afraid to break something because you can always go back in time to a previous version.
-* **Research documentation resources** (MDN, jQuery, etc.) at home to better understand what you’ll be getting into.
-* **Don’t be afraid to write code that you know you will have to remove later.** Create temporary elements (buttons, links, etc) that trigger events if real data is not available. For example, if you’re trying to figure out how to change some text when the game is over but you haven’t solved the win/lose game logic, you can create a button to simulate that until then.
+* **1.** User will be given a random card.
+* **2.** Cards will flash instantly face up and then back down.
+* **3.** User gets 3 guesses to find the matching card.
+* **4.** User will be hinted with hot & cold clues.
+
+---
+
+### Technologies
+
+* **jQuery** User will be given a random card.
+* **HTML5** Cards will flash instantly face up and then back down.
+* **CSS3** User gets 3 guesses to find the matching card.
+
+---
+
+### References
+
+* **Stackoverflow**   
+
+  - http://stackoverflow.com/questions/20916953/get-distance-between-two-points-in-canvas
+
+```javascript
+if (!x2) x2 = 0;
+if (!y2) y2 = 0;
+return Math.sqrt((x2 - x1) * (x2 - x1) + (y2 - y1) * (y2 - y1));
+```
+
+  - http://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array
+```javascript
+let shuffleCards = function(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    let j = Math.floor(Math.random() * (i + 1));
+    let temp = array[i];
+    array[i] = array[j];
+    array[j] = temp;
+  }
+  return array;
+}
+```
+
+* **W3Schools**
+* **MDN**
+* **CSS-Tricks**
 
 ---
 
