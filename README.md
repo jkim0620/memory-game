@@ -2,9 +2,7 @@
 
 ### Overview
 
-My very first game!
-
-One page website - Memory Game.
+* **One page website** - Memory Game.
 
 ![screen shot 2017-05-14 at 3 39 31 pm](https://cloud.githubusercontent.com/assets/18605009/26037159/d055f034-38bb-11e7-917f-1640865cff3c.png)
 
@@ -12,43 +10,17 @@ One page website - Memory Game.
 
 ![screen shot 2017-05-14 at 3 40 55 pm](https://cloud.githubusercontent.com/assets/18605009/26037193/8576b034-38bc-11e7-8ea0-7a00581d466c.png)
 
-Used modals for home page, instruction page and popups to instead of linking pages to keep the website as simple as possible.
+* Used modals for home page, instruction page and popups instead of linking pages to keep the website as simple as possible.
 
-![screen shot 2017-05-14 at 3 47 29 pm](https://cloud.githubusercontent.com/assets/18605009/26037202/af43b1aa-38bc-11e7-8b2e-71f01b543106.png)
+![screen shot 2017-05-14 at 3 47 29 pm](https://cloud.githubusercontent.com/assets/18605009/26037202/af43b1aa-38bc-11e7-8b2e-71f01b543106.png)  
 
----
+* **Color swatches**
 
-### Technical Requirements
+![screen shot 2017-05-14 at 3 48 18 pm](https://cloud.githubusercontent.com/assets/18605009/26037221/fd434942-38bc-11e7-872d-a24814033a5d.png)  - rgb(58, 58, 79)
 
-Your app must:
+![screen shot 2017-05-14 at 3 50 33 pm](https://cloud.githubusercontent.com/assets/18605009/26037238/62525436-38bd-11e7-8764-f24e0f19609b.png)  - rgb(162, 249, 232)
 
-* **Render the game in the browser**
-* **Design and implement logic for winning** & **visually display a win or loss state or which player won in a 2 player game**
-* **Include separate HTML / CSS / JavaScript files**
-* Use the **KISS (Keep It Simple Stupid)** and **DRY (Don't Repeat Yourself)** principles
-* Use **Vanilla JavaScript** or **jQuery** for **DOM manipulation**
-* **Deploy your game online**, where the rest of the world can access it [To be shown on Thursday - Github Pages]
-* Use **responsive design** for HTML and CSS (adhere to best practices)
-
----
-
-### Necessary Deliverables
-
-* A **working game, built by you**, hosted on the internet
-* A **git repository hosted on Github**, with a link to your hosted game in the URL section, and **frequent** commits dating back to the very beginning of the project
-* **A ``readme.md`` file** which must include:
-  - Explanations of the technologies used
-  - Approach taken
-  - User stories
-  - Wireframes
-  - How-to-use instructions
-  - Unsolved problems
-* A presentation deck which must include:
-  - ~5 slides
-  - Wireframes
-  - Features of your project
-  - Constraints you had to work with (e.g. technological, timing, content, etc.)
-  - Any other information you think might help us (your stakeholders) understand what you've built
+![screen shot 2017-05-14 at 3 52 06 pm](https://cloud.githubusercontent.com/assets/18605009/26037241/6e64d302-38bd-11e7-8cfc-f7ea4ebffbca.png)  - rgb(244, 66, 66)
 
 ---
 
