@@ -162,7 +162,6 @@ $(document).ready(function() {
 
     $(".modal-popup-wrapper").fadeIn(500);
     $(".card-box").append(findMe);
-
   }
 
   // replay function
@@ -177,20 +176,11 @@ $(document).ready(function() {
     console.log(cardArr);
     console.log(cardArr[0]);
     for(let i = 0; i < cardArr.length; i++) {
-      $(".container").append(cardArr[i]);
+      $(".flex-container").append(cardArr[i]);
       if (cardArr[i] === $thisIsMe[0]) {
         $thisIsMeIndex = i;
       }
     }
-
-    // window.setTimeout(function() {
-    //   $(".front").css({
-    //     "display": "none"
-    //   });
-    //   $(".back").css({
-    //     "display": "block"
-    //   });
-    // }, 500);
     window.setTimeout(function() {
       flipCardFaceDown();
     }, 2000);
@@ -331,6 +321,7 @@ $(document).ready(function() {
 
   $quitBtn.on("click", function() {
     $("#modal-confirm").fadeOut(500);
+    flipCardFaceUp();
     endGame();
   });
 });
