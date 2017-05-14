@@ -102,7 +102,7 @@ let shuffleCards = function(array) {
 
 ### Special Thanks to
 #
-![](https://git.generalassemb.ly/jkim0620/palmarius-project-1/img/guess-who-charac.tiff)
+![](https://git.generalassemb.ly/jkim0620/palmarius-project-1/img/guess-who-charac.png)
 
 ##### Simon
 A game with 4 colored "buttons". In this game, a round consists of lighting up one or more buttons in a random order, after which the player must reproduce that order by pressing the buttons. As the game progresses, the number of buttons to be pressed increases.
