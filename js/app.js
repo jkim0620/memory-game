@@ -186,7 +186,7 @@ $(document).ready(function() {
     }, 500);
     window.setTimeout(function() {
       flipCardFaceDown();
-    }, 650);
+    }, 600);
 
     $card.on("click", function() {
       $($(this).children().eq(0)).css({
