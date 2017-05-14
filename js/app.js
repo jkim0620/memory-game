@@ -188,7 +188,7 @@ $(document).ready(function() {
     window.setTimeout(function() {
       flipCardFaceDown();
       // $(".card").removeClass("flip");
-    }, 2500);
+    }, 800);
 
     $card.on("click", function() {
       $($(this).children().eq(0)).css({
@@ -249,11 +249,11 @@ $(document).ready(function() {
 
           if (guesses === 0) {
             window.setTimeout(function() {
+              $(this).off();
+              flipCardFaceUp();
 
-                flipCardFaceUp();
-                $(this).off();
-                guesses = 3;
-                $("#guesses").text(guesses);
+              guesses = 3;
+              $("#guesses").text(guesses);
 
             }, 2200);
             window.setTimeout(function() {
@@ -264,7 +264,7 @@ $(document).ready(function() {
 
         }
 
-      } else if ($(this)[0] === $thisIsMe[0] && guesses >= 0) {
+      } else if ($(this)[0] === $thisIsMe[0] && guesses > 0) {
         window.setTimeout(function() {
           $("#foundMeAlert").fadeIn(500);
         }, 400);
