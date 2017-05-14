@@ -200,21 +200,17 @@ $(document).ready(function() {
 
       clickedCard = $(this)[0];
 
-      // checking if the clickedCard is the answer
-      if ($(this)[0] !== $thisIsMe[0]) {
-
-        for (let i = 0; i < cardArr.length; i++) {
-          // getting the index number of clicked item
-          if (cardArr[i] === $(this)[0]) {
-            currentIndexNum = i;
-          }
+      for (let i = 0; i < cardArr.length; i++) {
+        // getting the index number of clicked item
+        if (cardArr[i] === $(this)[0]) {
+          currentIndexNum = i;
         }
+      }
 
-        // if there are remaining guesses DO THIS
+      // if clickedCard is not the answer
+      if ($(this)[0] !== $thisIsMe[0]) {
+        // and if there are remaining guesses DO THIS
         if (guesses > 0) {
-          guesses -= 1;
-          $("#guesses").text(guesses);
-
           // hot or cold clues
           if (calculateDistance() > 3) {
             window.setTimeout(function() {
@@ -225,7 +221,7 @@ $(document).ready(function() {
             }, 1000);
             window.setTimeout(function() {
               $("#coldAlert").fadeOut(500);
-            }, 1200);
+            }, 1500);
           } else if (calculateDistance() > 1.5) {
             window.setTimeout(function() {
               $("#warmAlert").show(500);
@@ -235,7 +231,7 @@ $(document).ready(function() {
             }, 1000);
             window.setTimeout(function() {
               $("#warmAlert").fadeOut(500)
-            }, 1200);
+            }, 1500);
           } else {
             window.setTimeout(function() {
               $("#hotAlert").show(500);
@@ -245,20 +241,27 @@ $(document).ready(function() {
             }, 1000);
             window.setTimeout(function() {
               $("#hotAlert").fadeOut(500)
-            }, 1200);
+            }, 1500);
           }
 
-          // if there are no remaining guesses DO THIS
-          window.setTimeout(function() {
-            if (guesses === 0) {
-              flipCardFaceUp();
-              $(this).off();
+          guesses -= 1;
+          $("#guesses").text(guesses);
+
+          if (guesses === 0) {
+            window.setTimeout(function() {
+
+                flipCardFaceUp();
+                $(this).off();
+                guesses = 3;
+                $("#guesses").text(guesses);
+
+            }, 2200);
+            window.setTimeout(function() {
               replayGame();
-              $(".modal-replay-wrapper p").text("Your guess is up! Play again?")
-              guesses = 3;
-              $("#guesses").text(guesses);;
-            }
-          }, 1600);
+              $(".modal-replay-wrapper p").text("Your guess is up! Play again?");
+            }, 2700);
+          }
+
         }
 
       } else if ($(this)[0] === $thisIsMe[0] && guesses >= 0) {
