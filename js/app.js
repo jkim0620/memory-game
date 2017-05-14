@@ -61,7 +61,7 @@ $(document).ready(function() {
     cardArr.push($card[i]);
   }
 
-  // Calculate the distance between player card and clicked card
+  // Calculating the distance
   let calculateDistance = function() {
     if ($thisIsMeIndex === 0 || $thisIsMeIndex === 1 || $thisIsMeIndex === 2 || $thisIsMeIndex === 3 || $thisIsMeIndex === 4 || $thisIsMeIndex === 5) {
       y1 = 4;
@@ -114,7 +114,7 @@ $(document).ready(function() {
     // Got this code from stackoverflow http://stackoverflow.com/questions/20916953/get-distance-between-two-points-in-canvas
     if (!x2) x2 = 0;
     if (!y2) y2 = 0;
-    return Math.sqrt((x2-x1)*(x2-x1)+(y2-y1)*(y2-y1));
+    return Math.sqrt((x2 - x1) * (x2 - x1) + (y2 - y1) * (y2 - y1));
   }
 
   // flip the cards face down
