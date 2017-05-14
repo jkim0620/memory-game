@@ -292,7 +292,7 @@ header {
 }
 
 #foundMeAlert {
-  left:40%;
+  left: 40%;
   width: 300px;
   height: 80px;
   border-radius: 15px;
@@ -342,6 +342,7 @@ header {
 
   .modal-instruction-content h3, .modal-instruction-content-copy h3 {
     font-size: 25px;
+    text-align: center;
   }
 
   .modal-instruction-content li, .modal-instruction-content-copy li {
@@ -356,10 +357,14 @@ header {
     text-shadow: 1px 1px 3px #3a3a4f;
   }
 
+  .modal-replay-content p {
+    font-size: 18px;
+  }
+
   .card-box {
-    padding-top: 70px;
-    /*margin: 0 auto;*/
-    margin-left: 10px;
+    padding-top: 50px;
+    margin: 0 auto;
+    margin-left: 2px;
   }
 
   .text-box {
@@ -370,14 +375,24 @@ header {
 
   #startBtn, #endBtn, #continueBtn, #goBtn, #goBackBtn, #replayBtn, #endGameBtn, #returnBtn, #resumeBtn, #quitBtn {
     width: 100px;
-    padding: 10px;
-    border-radius: 5px;
-    font-size: 20px;
+    font-size: 18px;
+  }
+
+  #replayBtn, #endGameBtn, #resumeBtn, #quitBtn {
+    display: inline;
+    width: 80px;
+    font-size: 15px;
+    margin: 10px 5px;
   }
 
   #continueBtn {
     font-size: 16px;
     margin-bottom: 30px;
+  }
+
+  #goBtn {
+    font-size: 14px;
+    padding: 5px;
   }
 
   .container {
@@ -397,4 +412,34 @@ header {
     width: 15%;
     height: auto;
   }
+
+  .alert-wrapper {
+    top: 30%;
+    left: 40%;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 7px #181b21 solid;
+    display: none;
+    text-align: center;
+  }
+
+  #foundMeAlert {
+    left:40%;
+    width: 300px;
+    height: 80px;
+    border-radius: 15px;
+    background-color: #f44242;
+    color: white;
+  }
+
+  #foundMeAlert p {
+    margin-top: 10%;
+  }
+
+  .alert-wrapper p {
+    margin-top: 40%;
+    font-size: 15px;
+  }
+
 }
