@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Game</title>
+    <title>Memory Game</title>
 
     <!-- CSS files -->
     <!-- <link rel="stylesheet" href="vendor/css/bootstrap.min.css"> -->
@@ -12,11 +12,10 @@
 
     <!-- JS files -->
     <script src="vendor/js/jquery.js"></script>
-    <!-- <script src="https://cdn.rawgit.com/nnattawat/flip/master/dist/jquery.flip.min.js"></script> -->
-    <!-- <script type="text/javascript" src="js/flip.js"></script> -->
     <script type="text/javascript" src="js/app.js"></script>
     <script src="https://use.fontawesome.com/a6c5b44794.js"></script>
   </head>
+
   <body>
     <!-- modal-intro-->
     <div id="modal-intro" class="modal-intro-wrapper">
@@ -24,7 +23,6 @@
         <h1>MEMORY GAME</h1>
         <button id="startBtn">START</button>
         <button id="endBtn">END</button>
-
         <p class="myName"><i class="fa fa-copyright" aria-hidden="true"></i> JULIA KIM</p>
 			</div>
 		</div>
@@ -36,12 +34,11 @@
         <h3>Instructions</h3>
         <ul>
           <li>1. You will be given a random card.</li>
-          <li>2. You have 2 seconds to search the matching card.</li>
-          <li>3. Cards flip face down after time is up.</li>
-          <li>4. You get 3 guesses to find it.</li>
-          <li>5. We will hint you with hot & cold clues.</li>
-          <li>ENJOY THE GAME!</li>
+          <li>2. Cards will flip face up for a quick second.</li>
+          <li>3. You get 3 guesses to find the mathing card.</li>
+          <li>4. We will hint you with hot & cold clues.</li>
         </ul>
+        <p class="font-style">ENJOY THE GAME!</p>
         <button id="continueBtn">CONTINUE</button>
 			</div>
 		</div>
@@ -53,12 +50,11 @@
         <h3>Instructions</h3>
         <ul>
           <li>1. You will be given a random card.</li>
-          <li>2. You have 2 seconds to search the matching card.</li>
-          <li>3. Cards flip face down after time is up.</li>
-          <li>4. You get 3 guesses to find it.</li>
-          <li>5. We will hint you with hot & cold clues.</li>
-          <li>ENJOY THE GAME!</li>
+          <li>2. Cards will flip face up for a quick second.</li>
+          <li>3. You get 3 guesses to find the mathing card.</li>
+          <li>4. We will hint you with hot & cold clues.</li>
         </ul>
+        <p class="font-style">ENJOY THE GAME!</p>
         <button id="goBackBtn">GO BACK</button>
 			</div>
 		</div>
@@ -71,7 +67,7 @@
           <div class="card-box"></div>
         </div>
         <div class="text-box">
-          <p>"I'll give you 2 seconds<br /> to search where I am."</p>
+          <p>"You only have 300milliseconds<br /> to search where I am."</p>
         </div>
         <button id="goBtn">COME AND GET ME!</button>
 			</div>
