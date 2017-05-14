@@ -45,7 +45,7 @@ Your app must:
 
 ---
 
-### Suggested Ways to Get Started
+### User Story
 
 * **Pseudocode** Start by stating the problems in plain text. This will help you guide your process and understand the problem better.
 * **Break the project down into different components** (data, presentation, views, style, DOM manipulation) and brainstorm each component individually. Use whiteboards!

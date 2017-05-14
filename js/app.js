@@ -183,12 +183,10 @@ $(document).ready(function() {
     }
     window.setTimeout(function() {
       flipCardFaceUp();
-      // $(".card").addClass("flip");
     }, 500);
     window.setTimeout(function() {
       flipCardFaceDown();
-      // $(".card").removeClass("flip");
-    }, 800);
+    }, 650);
 
     $card.on("click", function() {
       $($(this).children().eq(0)).css({
@@ -248,13 +246,11 @@ $(document).ready(function() {
           $("#guesses").text(guesses);
 
           if (guesses === 0) {
+            $card.off();
             window.setTimeout(function() {
-              $(this).off();
               flipCardFaceUp();
-
               guesses = 3;
               $("#guesses").text(guesses);
-
             }, 2200);
             window.setTimeout(function() {
               replayGame();
