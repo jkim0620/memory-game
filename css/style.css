@@ -58,6 +58,11 @@ header {
   font-size: 20px;
 }
 
+.myName {
+  /*color: #f44242;*/
+  margin-top: 70px;
+}
+
 .game-wrapper, .modal-intro-wrapper, .modal-instruction-wrapper, .modal-instruction-wrapper-copy, .modal-popup-wrapper, .modal-replay-wrapper, .modal-confirm-wrapper {
 	position: fixed;
 	top: 0;
@@ -277,8 +282,11 @@ header {
 }
 
 .front {
+  /*border: 7px solid #a2f9e8;*/
   background: white;
   display: none;
+  font-size: 28px;
+  color: #f44242;
 }
 
 .back {
@@ -334,6 +342,11 @@ header {
 @media (max-width: 700px) {
   header {
     padding: 10px;
+  }
+
+  .myName {
+    margin-top: 25px;
+    font-size: 10px;
   }
 
   .modal-intro-content, .modal-popup-content, .modal-replay-content {
@@ -418,7 +431,11 @@ header {
   .card {
     margin: 0 auto;
     width: 15%;
-    height: auto;
+    height: 25%;
+  }
+
+  .front {
+    font-size: 20px;
   }
 
   .alert-wrapper {
