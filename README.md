@@ -4,6 +4,8 @@
 
 * **One page website** - Memory Game.
 
+https://jkim0620.github.io/memory-game/
+
 ![screen shot 2017-05-14 at 3 39 31 pm](https://cloud.githubusercontent.com/assets/18605009/26037159/d055f034-38bb-11e7-917f-1640865cff3c.png)
 
 ![screen shot 2017-05-14 at 3 39 57 pm](https://cloud.githubusercontent.com/assets/18605009/26037162/fdd5c8f4-38bb-11e7-8786-68c05cad81b9.png)
