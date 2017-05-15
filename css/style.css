@@ -507,30 +507,6 @@ header {
   }
 }
 
-/*@media (max-width: 650px) {
-    .flex-container {
-      margin-top: 100px;
-      width: 80%;
-      height: 20%;
-      margin: 0 auto;
-    }
-
-    .card {
-      margin: 0 auto;
-      width: 15%;
-      height: 25%;
-    }
-
-    .front {
-      font-size: 20px;
-    }
-
-    .guess-who-img {
-      height: 20%;
-      margin-left: 10%;
-    }
-}*/
-
 @media (max-width: 580px) {
 
   #foundMeAlert {

@@ -1,27 +1,4 @@
 $(document).ready(function() {
-  /*
-  PROGRAM Where's Waldo Memory Game
-    User should click on start button to start the game
-
-    On click of start button, a picture of Waldo will be given to the user
-    Flip all cards(approx 30-50 cards) so that user can see the pic side
-    User will have 2 seconds to observe
-    After time is up, flip back the cards.
-    User should find Waldo within 3 guesses
-      #1. If the user clicks on wrong card, it would flip for a sec and flip back, and hint the user by giving hot or cold clues
-
-      #2. If the user doesn't get the answer after 3 guesses the cards will shuffle and flip to the pic side, and another 2 seconds will be given to the user
-      and repeat #1
-
-      #3. If the user finds Waldo, alert "You win" and give the user two options (continue / end)
-
-      #4-1. if user wants to continue, move on to next stage.
-        New character will be given to the user
-        Shuffle the cards and flip cards for 3seconds and user repeats #1,2,3 and 4
-
-      #4-2. if user wants to end, end the game.
-  END
-  */
 
   // variables
   let $startBtn = $("#startBtn");
@@ -37,15 +14,13 @@ $(document).ready(function() {
   let $resumeBtn = $("#resumeBtn");
   let $quitBtn = $("#quitBtn");
 
-  console.log($startBtn);
-
-  let findMe;
-  let clickedCard;
   let guesses = 3;
 
   let $card = $(".card");
   let cardArr = [];
 
+  let findMe;
+  let clickedCard;
   let randomCard;
   let $thisIsMe;
   let $thisIsMeIndex;
