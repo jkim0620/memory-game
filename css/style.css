@@ -1,14 +1,12 @@
 body {
   box-sizing: border-box;
   background: #3a3a4f;
-  /*background: #f44242;*/
   font-family: "Baloo", cursive;
   color: #3a3a4f;
 }
 
 header {
   background-color: #a2f9e8;
-  /*background: #3a3a4f;*/
   padding: 0 50px;
   display: flex;
 }
@@ -349,6 +347,13 @@ header {
   color: #3a3a4f;
 }
 
+@media (max-width: 800px) {
+  .guess-who-img {
+    height: 70%;
+    margin: auto;
+  }
+}
+
 /* Media Query */
 @media (max-width: 700px) {
   header {
@@ -519,23 +524,20 @@ header {
 }
 
 @media (max-width: 580px) {
+  .container {
+    padding-top: 60px;
+  }
+
+  .modal-intro-content, .modal-popup-content, .modal-replay-content, .modal-instruction-content, .modal-instruction-content-copy, .modal-confirm-content {
+    margin-top: 70px;
+  }
+
   #foundMeAlert {
     left: 20%;
   }
 
   .guess-who-img {
-    margin-left: 7%;
+    height: 70%;
+    margin: auto;
   }
 }
-
-/*@media only handheld(max-width: 700px) {
-  header {
-    padding: 5px;
-  }
-
-  .modal-intro-content, .modal-popup-content, .modal-replay-content {
-    width: 300px;
-    height: 300px;
-    margin-top: 50px;
-  }
-}*/
