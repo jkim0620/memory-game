@@ -254,8 +254,6 @@ header {
   height: 100%;
   max-width: 960px;
   margin: 0 auto;
-  padding-right: 50px;
-  padding-left: 50px;
   padding-top: 50px;
 }
 
@@ -295,10 +293,12 @@ header {
   /*background: #3a3a4f;*/
   background-color: #f44242;
   padding: 0;
+  width: 100%;
+  margin: 0 auto;
 }
 
 .guess-who-img {
-  height: 90%;
+  height: 80%;
   margin-left: 25%;
 }
 
@@ -347,14 +347,24 @@ header {
   color: #3a3a4f;
 }
 
+/* Media Query */
 @media (max-width: 800px) {
+  .container {
+    padding-right: 10px;
+    padding-left: 10px;
+  }
+
+  .back {
+    box-sizing: padding-box;
+    padding: 0;
+  }
+
   .guess-who-img {
-    height: 70%;
-    margin: auto;
+    height: 90%;
+    margin: 0 auto;
   }
 }
 
-/* Media Query */
 @media (max-width: 700px) {
   header {
     padding: 7px;
