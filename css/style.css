@@ -352,7 +352,7 @@ header {
 /* Media Query */
 @media (max-width: 700px) {
   header {
-    padding: 20px;
+    padding: 7px;
   }
 
   .myName {
@@ -360,20 +360,31 @@ header {
     font-size: 10px;
   }
 
+  .modal-intro-wrapper, .modal-instruction-wrapper, .modal-instruction-wrapper-copy, .modal-popup-wrapper, .modal-replay-wrapper, .modal-confirm-wrapper {
+  	padding-top: 10px;
+  }
+
   .modal-intro-content, .modal-popup-content, .modal-replay-content {
     width: 300px;
     height: 300px;
-    margin-top: 20%;
+    margin-top: 10px;
+  }
+
+  .modal-confirm-content {
+    height: auto;
+  	padding: 30px;
+    font-size: 18px;
+    margin-top: 30px;
   }
 
   .modal-instruction-content, .modal-instruction-content-copy {
     width: 60%;
     height: auto;
-    padding: 30px 20px;
+    padding: 10px;
   }
 
   .modal-instruction-content h3, .modal-instruction-content-copy h3 {
-    font-size: 25px;
+    font-size: 20px;
     text-align: center;
   }
 
@@ -407,7 +418,7 @@ header {
 
   #startBtn, #endBtn, #continueBtn, #goBtn, #goBackBtn, #replayBtn, #endGameBtn, #returnBtn, #resumeBtn, #quitBtn {
     width: 100px;
-    font-size: 18px;
+    font-size: 15px;
   }
 
   #replayBtn, #endGameBtn, #resumeBtn, #quitBtn {
@@ -428,7 +439,7 @@ header {
   }
 
   .container {
-    padding-top: 100px;
+    padding-top: 30px;
     padding-left: 30px;
     padding-right: 30px;
   }
@@ -440,7 +451,7 @@ header {
   }
 
   .card {
-    margin: 0 auto;
+    margin: 5px auto;
     width: 15%;
     height: 25%;
   }
@@ -451,7 +462,7 @@ header {
 
   .guess-who-img {
     height: 80%;
-    margin-left: 10%;
+    margin-left: 20px;
   }
 
   .alert-wrapper {
@@ -508,7 +519,6 @@ header {
 }
 
 @media (max-width: 580px) {
-
   #foundMeAlert {
     left: 20%;
   }
@@ -516,6 +526,16 @@ header {
   .guess-who-img {
     margin-left: 7%;
   }
-
-
 }
+
+/*@media only handheld(max-width: 700px) {
+  header {
+    padding: 5px;
+  }
+
+  .modal-intro-content, .modal-popup-content, .modal-replay-content {
+    width: 300px;
+    height: 300px;
+    margin-top: 50px;
+  }
+}*/
