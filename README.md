@@ -1,8 +1,8 @@
-# ![](https://ga-dash.s3.amazonaws.com/production/assets/logo-9f88ae6c9c3871690e33280fcf557f33.png) Project #1: The Game
+# Project #1: The Game
 
 ### Overview
 
-* **One page website** - Memory Game.
+#### Memory Game - A one page website for game app
 
 https://jkim0620.github.io/memory-game/
 
@@ -16,13 +16,15 @@ https://jkim0620.github.io/memory-game/
 
 ![screen shot 2017-05-14 at 3 47 29 pm](https://cloud.githubusercontent.com/assets/18605009/26037202/af43b1aa-38bc-11e7-8b2e-71f01b543106.png)  
 
-* **Color swatches**
+##### Color swatches
 
-![screen shot 2017-05-14 at 3 48 18 pm](https://cloud.githubusercontent.com/assets/18605009/26037221/fd434942-38bc-11e7-872d-a24814033a5d.png)  - rgb(58, 58, 79)
+![swatch5](https://user-images.githubusercontent.com/18605009/27005952-2b6a659a-4df7-11e7-9949-7154ff41330f.png) - rgb(58, 58, 79)
 
-![screen shot 2017-05-14 at 3 50 33 pm](https://cloud.githubusercontent.com/assets/18605009/26037238/62525436-38bd-11e7-8764-f24e0f19609b.png)  - rgb(162, 249, 232)
 
-![screen shot 2017-05-14 at 3 52 06 pm](https://cloud.githubusercontent.com/assets/18605009/26037241/6e64d302-38bd-11e7-8cfc-f7ea4ebffbca.png)  - rgb(244, 66, 66)
+![swatch6](https://user-images.githubusercontent.com/18605009/27005959-59a15252-4df7-11e7-9feb-d3418addd8ba.png) - rgb(162, 249, 232)
+
+
+![swatch7](https://user-images.githubusercontent.com/18605009/27005963-78aceea4-4df7-11e7-81cb-05180ab4f348.png)  - rgb(244, 66, 66)
 
 ---
 
@@ -41,13 +43,6 @@ https://jkim0620.github.io/memory-game/
 * **HTML5**
 * **CSS3**
 * **Flexbox** for grid system and responsive web page
-
----
-
-### Unsolved problems
-
-* **Flipping effect**
-* **Adding keypress functions** for a better user experience
 
 ---
 
